@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -23,7 +24,12 @@
 			<children>
 				<HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="600.0">
 					<children>
-						<Label text="%labelPreview" />
+						<Label styleClass="myLabel" text="%labelPreview">
+							<HBox.margin>
+								<Insets right="358.0" />
+							</HBox.margin>
+						</Label>
+						<ColorPicker styleClass="MycolorPicker" />
 					</children>
 					<opaqueInsets>
 						<Insets />
@@ -47,7 +53,7 @@
 				</HBox>
 				<HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="600.0">
 					<children>
-						<Label text="%labelElements">
+						<Label styleClass="myLabel" text="%labelElements">
 							<padding>
 								<Insets left="10.0" />
 							</padding>
@@ -81,7 +87,7 @@
 				</HBox>
 				<HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="600.0">
 					<children>
-						<Label text="%labelBashrc">
+						<Label styleClass="myLabel" text="%labelBashrc">
 							<padding>
 								<Insets left="10.0" />
 							</padding>

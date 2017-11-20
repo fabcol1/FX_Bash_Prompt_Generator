@@ -1,4 +1,4 @@
-.label {
+.myLabel {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #DD0000;
@@ -20,4 +20,8 @@
 .line {
 	-fx-border-color: black;
 	-fx-border-width: 3 0 0 0;
+}
+
+.MycolorPicker {
+	-fx-background-color:rgb(136,138,133);	
 }
