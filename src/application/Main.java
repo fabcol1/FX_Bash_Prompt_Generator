@@ -3,6 +3,8 @@ package application;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
+import bash_prompt_gen.BashPromptGeneratorController;
+import bash_prompt_gen.BashPromptGeneratorManager;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -14,14 +16,20 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+
 	@Override
 	public void start(Stage stage) throws IOException {
 		
-		Parent root = FXMLLoader.load(getClass().getResource("../bash_prompt_gen/BashPromptGenerator.fxml"),
-							ResourceBundle.getBundle("resources.BashPromptGenerator"));
-			
-        Scene scene = new Scene(root, 600, 650);
-        
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../bash_prompt_gen/BashPromptGenerator.fxml"),
+				ResourceBundle.getBundle("resources.BashPromptGenerator"));
+		
+		Parent root = loader.load();
+		
+		final BashPromptGeneratorController controller = (BashPromptGeneratorController) loader.getController();
+		controller.init();			
+		
+		Scene scene = new Scene(root, 600, 650);
+		
         
         stage.setTitle("FX Bash prompt generator");
         stage.setResizable(false);

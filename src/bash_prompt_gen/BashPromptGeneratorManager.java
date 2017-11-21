@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.TextFlow;
 
 public class BashPromptGeneratorManager {
-
+	
 //	style="-fx-control-inner-background:#000000; -fx-font-family: Consolas; -fx-highlight-fill: #00ff00; -fx-highlight-text-fill: #000000; -fx-text-fill: #00ff00; "
 	    
 	/**
@@ -27,5 +27,5 @@ public class BashPromptGeneratorManager {
         int b = (int) (255 * c.getBlue());
         return String.format("#%02x%02x%02x", r, g, b);
     }
-	
+    
 }
