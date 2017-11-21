@@ -28,9 +28,16 @@
     -fx-font-weight: bold;		
 }
 
+.MySpinner {
+	-fx-background-color:rgb(136,138,133);
+	-fx-control-inner-background:rgb(136,138,133);
+	-fx-font-weight: bold;		
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+}
+
 .text-area {
 	-fx-background-color:#990000;	
-	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );	
 }
 
 .bashrc {
@@ -40,7 +47,9 @@
 }
 
 #previewTextFlow {
-	-fx-background-color:black;
+	-fx-background-color:white;
+	-fx-font-family: "Monospaced";
+	-fx-font-size: 30;
 }
 
 /*
