@@ -49,7 +49,7 @@
 #previewTextFlow {
 	-fx-background-color:white;
 	-fx-font-family: "Monospaced";
-	-fx-font-size: 30;
+	-fx-font-size: 12;
 }
 
 /*
@@ -59,5 +59,47 @@
  * 
  * CHANGE .combo-box WITH THE CLASS OF YOUR ITEM ES. .text-area
  */
+
+/*
+ *.toggle-button,
+.toggle-button:focused{
+    -fx-background-color: red;
+    -fx-text-fill: black;
+}
+.toggle-button:selected,
+.toggle-button:selected:focused {
+    -fx-background-color: green;
+    -fx-text-fill: black;	
+} 
+ */ 
+ 
+ .radio-button,
+.radio-button:focused {
+	-fx-font-size: 14px;
+    -fx-text-fill: #DD0000;
+    -fx-effect: dropshadow( gaussian , rgba(22,0,0,0.5) , 0,0,0,1 );
+	-fx-padding: 5px;
+}
+.radio-button:selected,
+.radio-button:selected:focused {
+	-fx-focus-color: red;
+} 
+
+#redRadio > .radio {
+	-fx-background-color: #DD0000;
+}
+#greenRadio > .radio {
+	-fx-background-color: #00DD00;
+}
+#blackRadio > .radio {
+	-fx-background-color: #000000;
+}
+#whiteRadio > .radio {
+	-fx-background-color: #FFFFFF;
+}
+#blueRadio > .radio {
+	-fx-background-color: #0000DD;
+}
+
 
 
