@@ -38,7 +38,7 @@
                 <HBox alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="500.0">
                     <children>
                         <ComboBox fx:id="fontComboBox" styleClass="MycolorPicker"
-                                                          prefWidth="150.0" onAction="#handleFontPickerPreview">
+                                  prefWidth="150.0" onAction="#handleFontPickerPreview">
                             <HBox.margin>
                                 <Insets bottom="1.0" top="2.5" right="10.0" />
                             </HBox.margin>
@@ -62,16 +62,20 @@
                         </ColorPicker>
                     </children>
                 </HBox>
+
                 <HBox alignment="CENTER" prefHeight="63.0" maxHeight="63.0"
-                                      prefWidth="596.0">
-                    <padding>
-                        <Insets top="10.0" />
-                    </padding>
+                      prefWidth="596.0" maxWidth="596.0">
+               
                     <children>
                         <TextFlow fx:id="previewTextFlow" prefHeight="54.0"
-                                                          maxHeight="54.0" prefWidth="568.0" disable="true" />
+                                  maxHeight="54.0" maxWidth="568.0" prefWidth="568.0" disable="true">
+                            <padding>
+                                <Insets left="7.0" top="5.0" />
+                            </padding>
+                        </TextFlow>
                     </children>
                 </HBox>
+       
                 <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="600.0">
                     <children>
                         <Label styleClass="myLabel" text="%labelElements">
@@ -125,21 +129,23 @@
                 <HBox alignment="CENTER" prefHeight="244.0" prefWidth="300.0">
                     <children>
                         <GridPane prefHeight="236.0" prefWidth="282.0"
-                                                          gridLinesVisible="true" alignment="CENTER">
+                                  gridLinesVisible="true" alignment="CENTER">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
-                                                                                   prefWidth="100.0" />
+                                                   prefWidth="100.0" />
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
-                                                                                   prefWidth="100.0" />
+                                                   prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="20.0" prefHeight="20.0"
-                                                                                vgrow="SOMETIMES" />
+                                                vgrow="SOMETIMES" />
                                 <RowConstraints minHeight="10.0" prefHeight="10.0"
-                                                                                vgrow="SOMETIMES" />
+                                                vgrow="SOMETIMES" />
                             </rowConstraints>
                             
-                            <ToggleButton prefHeight="35.0" fx:id="hostnameToggle" selected="false" text="Hostname" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleHostShort" prefHeight="40.0" fx:id="hostnameShort" selected="false" text="%hostnameShort" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleHostFull" prefHeight="40.0" fx:id="hostnameFull" selected="false" text="%hostnameFull" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleUsername" prefHeight="35.0" fx:id="username" selected="false" text="%username" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 
                             
                         </GridPane>
@@ -168,7 +174,7 @@
                     </padding>
                     <children>
                         <TextArea styleClass="bashrc" prefHeight="220.0"
-                                                          prefWidth="566.0" editable="false" />
+                                  prefWidth="566.0" editable="false" />
                     </children>
                 </HBox>
             </children>

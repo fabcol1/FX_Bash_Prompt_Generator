@@ -79,11 +79,6 @@
     -fx-focus-color: transparent;	
 } 
   
- 
- #hostnameToggle {
-     
- }
- 
  .radio-button,
 .radio-button:focused {
 	-fx-font-size: 14px;
@@ -129,5 +124,19 @@
 	-fx-background-color: #DDDD00;
 }
 
+/*.scroll-pane {
+    	-fx-background-color:transparent;	
+	-fx-control-inner-background:transparent;
+        -fx-padding:0;
+        -fx-background-insets: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}*/
+
+#myScroll {
+    -fx-padding: 0;
+}
 
 

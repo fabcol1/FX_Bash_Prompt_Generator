@@ -1,6 +1,7 @@
 package bash_prompt_gen;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,10 +10,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 public class BashPromptGeneratorManager {
@@ -21,6 +22,9 @@ public class BashPromptGeneratorManager {
 	 * A Map for keep all the styles, avoiding css errors.
 	 */
 	private static final Map<String,String> stylesMap = new HashMap<>();
+	private static final Map<String,Text> textMap = new LinkedHashMap<>();
+        
+        private TextFlow area;
         
         private static Color foregroundColor = Color.BLACK;
         private static Color backgroundColor = Color.WHITE;
@@ -40,7 +44,7 @@ public class BashPromptGeneratorManager {
 	/*
 	 * Change TextFlow inner background color
 	 */
-	public void setTextFlowInnerColor(TextFlow area, ActionEvent event) {
+	public void setTextFlowInnerColor(ActionEvent event) {
     	event.consume();
     	final Color c = ( (ColorPicker) event.getSource()).getValue();
     	stylesMap.put("-fx-background-color:", colorToStringValue(c));
@@ -56,7 +60,7 @@ public class BashPromptGeneratorManager {
 	/*
 	 * Change global TextFlow font family
 	 */
-    public void setTextFlowFont(TextFlow area, ActionEvent event) {
+    public void setTextFlowFont(ActionEvent event) {
 //        -fx-font-family: "Consolas";
 //    	area.setStyle("-fx-font-family: \"Consolas\"");
     	
@@ -76,7 +80,7 @@ public class BashPromptGeneratorManager {
     /*
 	 * Change global TextFlow font size
 	 */
-    public void setTextFlowSize(TextFlow area, Integer newValue) {
+    public void setTextFlowSize(Integer newValue) {
     	final String s = String.valueOf(newValue);
     	stylesMap.put("-fx-font-size:", s);
     	
@@ -104,6 +108,10 @@ public class BashPromptGeneratorManager {
         fontComboBox.setItems(FXCollections.observableList(families));
         fontComboBox.getSelectionModel().select("Monospaced");
     }
+    
+    public void init(final TextFlow area) {
+        this.area = area;
+    }
 
     void setColorsSelection(RadioButton colorBtn, RadioButton typeBtn) {
         if(typeBtn.getId().equals("fontRadio")) {
@@ -121,5 +129,26 @@ public class BashPromptGeneratorManager {
         }
 
     }
+    
+    public void handleToggleButtons(String id, Boolean toggled) {
+        if(!toggled) {
+            if(textMap!=null && !textMap.isEmpty()) {
+                textMap.remove(id);
+            }
+        } else {
+            Text t = new Text(id);
+            textMap.put(id, t);
+        }
+        refreshTextFlowArea();
+    }
+    
+    
+    private void refreshTextFlowArea() {
+        area.getChildren().clear();
+        textMap.forEach((k,el) -> {
+            area.getChildren().add(el);
+        });
+    }
+
     
 }
