@@ -60,18 +60,29 @@
  * CHANGE .combo-box WITH THE CLASS OF YOUR ITEM ES. .text-area
  */
 
-/*
- *.toggle-button,
+
+.toggle-button,
 .toggle-button:focused{
-    -fx-background-color: red;
-    -fx-text-fill: black;
+    -fx-focus-color: transparent;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+
 }
 .toggle-button:selected,
 .toggle-button:selected:focused {
-    -fx-background-color: green;
-    -fx-text-fill: black;	
+      -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #DD0000;
+    -fx-effect: dropshadow( gaussian , rgba(55,0,0,0.5) , 0,0,0,1 );
+     -fx-background-radius: 5;
+    -fx-focus-color: transparent;	
 } 
- */ 
+  
+ 
+ #hostnameToggle {
+     
+ }
  
  .radio-button,
 .radio-button:focused {
@@ -99,22 +110,22 @@
     -fx-effect: dropshadow( gaussian , rgba(55,0,0,0.5) , 0,0,0,1 );
 }
 
-#redRadio > .radio {
+#RED > .radio {
 	-fx-background-color: #DD0000;
 }
-#greenRadio > .radio {
+#GREEN > .radio {
 	-fx-background-color: #00DD00;
 }
-#blackRadio > .radio {
+#BLACK > .radio {
 	-fx-background-color: #000000;
 }
-#whiteRadio > .radio {
+#WHITE > .radio {
 	-fx-background-color: #FFFFFF;
 }
-#blueRadio > .radio {
+#BLUE > .radio {
 	-fx-background-color: #0000DD;
 }
-#yellowRadio > .radio {
+#YELLOW > .radio {
 	-fx-background-color: #DDDD00;
 }
 

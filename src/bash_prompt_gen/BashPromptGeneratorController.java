@@ -23,8 +23,11 @@ public class BashPromptGeneratorController {
 	@FXML public Spinner<Integer> spinner;
 	
 	@FXML public ToggleGroup toggleGroup1;
-	@FXML public RadioButton redRadio;
-	
+	@FXML public ToggleGroup toggleGroup2;
+        
+        @FXML public RadioButton WHITE;
+        @FXML public RadioButton BLACK;
+
 	@FXML protected void handleColorPickerPreview(ActionEvent event) {
 		if(manager == null) return;
 		manager.setTextFlowInnerColor(previewTextFlow, event);
@@ -39,6 +42,15 @@ public class BashPromptGeneratorController {
 		if(manager == null) return;
 		manager.setTextFlowSize(previewTextFlow, newValue);
 	}
+        
+        protected void handleColorsSelection(RadioButton colorBtn, RadioButton typeBtn) {
+            	if(manager == null) return;
+                manager.setColorsSelection(colorBtn, typeBtn);
+        }
+        protected void handleColorsView(RadioButton typeBtn) {
+                if(manager == null) return;
+                manager.setColorsView(typeBtn, toggleGroup1);
+        }
 	
 	public void init() {
 		manager = new BashPromptGeneratorManager();
@@ -53,15 +65,31 @@ public class BashPromptGeneratorController {
 		
 		manager.initComboBox(fontComboBox);
 		initSpinnerListener();
+                initToggleGroupColor();
 		
-        Text t = new Text("provaprovaprova");
-        previewTextFlow.getChildren().add(t);	
+                Text t = new Text("provaprovaprova");
+                previewTextFlow.getChildren().add(t);	
 	}
 	
 	private void initSpinnerListener() {
 		spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
 			handleFontSizePreview(newValue);
 		});
+	}
+       
+        private void initToggleGroupColor() {
+		toggleGroup1.selectedToggleProperty().addListener((obs, oldValue, newValue) -> {
+                    handleColorsSelection((RadioButton)newValue,(RadioButton)toggleGroup2.getSelectedToggle());
+                });       
+                
+                toggleGroup2.selectedToggleProperty().addListener((obs, oldValue, newValue) -> {
+                    handleColorsView((RadioButton)newValue);
+                });
+                
+                if(manager!=null) {
+                    manager.setFontColorRadioButton(BLACK);
+                    manager.setBackRadioButton(WHITE);
+                }
 	}
 	
 }

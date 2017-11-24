@@ -104,14 +104,14 @@
                         <HBox alignment="CENTER" prefHeight="20.0" prefWidth="340.0">
                             <children>
                                 <fx:define>
-                                    <ToggleGroup fx:id="toggleGroup1" />
+                                    <ToggleGroup fx:id="toggleGroup1"/>
                                 </fx:define>
-                                <RadioButton fx:id="blackRadio" selected="true" toggleGroup="$toggleGroup1" />
-                                <RadioButton fx:id="blueRadio" selected="false" toggleGroup="$toggleGroup1" />
-                                <RadioButton fx:id="whiteRadio" selected="false" toggleGroup="$toggleGroup1" />
-                                <RadioButton fx:id="redRadio" selected="false" toggleGroup="$toggleGroup1" />
-                                <RadioButton fx:id="greenRadio" selected="false" toggleGroup="$toggleGroup1" />
-                                <RadioButton fx:id="yellowRadio" selected="false" toggleGroup="$toggleGroup1" />
+                                <RadioButton fx:id="BLACK" selected="true" toggleGroup="$toggleGroup1" />
+                                <RadioButton fx:id="BLUE" selected="false" toggleGroup="$toggleGroup1" />
+                                <RadioButton fx:id="WHITE" selected="false" toggleGroup="$toggleGroup1" />
+                                <RadioButton fx:id="RED" selected="false" toggleGroup="$toggleGroup1" />
+                                <RadioButton fx:id="GREEN" selected="false" toggleGroup="$toggleGroup1" />
+                                <RadioButton fx:id="YELLOW" selected="false" toggleGroup="$toggleGroup1" />
                             </children>
                         </HBox>
                                                 
@@ -133,11 +133,15 @@
                                                                                    prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="10.0"
+                                <RowConstraints minHeight="20.0" prefHeight="20.0"
                                                                                 vgrow="SOMETIMES" />
                                 <RowConstraints minHeight="10.0" prefHeight="10.0"
                                                                                 vgrow="SOMETIMES" />
                             </rowConstraints>
+                            
+                            <ToggleButton prefHeight="35.0" fx:id="hostnameToggle" selected="false" text="Hostname" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+                            
                         </GridPane>
                     </children>
                 </HBox>

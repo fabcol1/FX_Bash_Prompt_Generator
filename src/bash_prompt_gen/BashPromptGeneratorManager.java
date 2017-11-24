@@ -8,6 +8,9 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextFlow;
@@ -18,8 +21,20 @@ public class BashPromptGeneratorManager {
 	 * A Map for keep all the styles, avoiding css errors.
 	 */
 	private static final Map<String,String> stylesMap = new HashMap<>();
+        
+        private static Color foregroundColor = Color.BLACK;
+        private static Color backgroundColor = Color.WHITE;
+        
+        private RadioButton fontColorRadioButton;        
+        private RadioButton backColorRadioButton;
+    
+        public void setFontColorRadioButton(RadioButton fontColorRadioButton) {
+            this.fontColorRadioButton = fontColorRadioButton;
+        }
+        public void setBackRadioButton(RadioButton backRadioButton) {
+            this.backColorRadioButton = backRadioButton;
+        }
 
-	
 	//	style="-fx-control-inner-background:#000000; -fx-font-family: Consolas; -fx-highlight-fill: #00ff00; -fx-highlight-text-fill: #000000; -fx-text-fill: #00ff00; "
 	    
 	/*
@@ -84,10 +99,27 @@ public class BashPromptGeneratorManager {
         return String.format("#%02x%02x%02x", r, g, b);
     }
 
-	public void initComboBox(ComboBox<String> fontComboBox) {
+    public void initComboBox(ComboBox<String> fontComboBox) {
         final List<String> families = Font.getFamilies();
-        fontComboBox.setItems(FXCollections.observableList(families));	
+        fontComboBox.setItems(FXCollections.observableList(families));
         fontComboBox.getSelectionModel().select("Monospaced");
-	}
+    }
+
+    void setColorsSelection(RadioButton colorBtn, RadioButton typeBtn) {
+        if(typeBtn.getId().equals("fontRadio")) {
+            fontColorRadioButton = colorBtn;
+        } else if(typeBtn.getId().equals("backRadio")) {
+            backColorRadioButton = colorBtn;
+        }
+    }
+
+    void setColorsView(RadioButton typeBtn, ToggleGroup toggleGroup1) {
+        if(typeBtn.getId().equals("fontRadio")) {
+            toggleGroup1.selectToggle(fontColorRadioButton);
+        } else if(typeBtn.getId().equals("backRadio")) {
+            toggleGroup1.selectToggle(backColorRadioButton);
+        }
+
+    }
     
 }
