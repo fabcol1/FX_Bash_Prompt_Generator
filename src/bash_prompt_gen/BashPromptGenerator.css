@@ -78,12 +78,26 @@
 	-fx-font-size: 14px;
     -fx-text-fill: #DD0000;
     -fx-effect: dropshadow( gaussian , rgba(22,0,0,0.5) , 0,0,0,1 );
-	-fx-padding: 5px;
+	-fx-padding: 2px;
 }
 .radio-button:selected,
 .radio-button:selected:focused {
 	-fx-focus-color: red;
 } 
+
+#fontRadio {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #DD0000;
+    -fx-effect: dropshadow( gaussian , rgba(55,0,0,0.5) , 0,0,0,1 );
+}
+
+#backRadio {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #DD0000;
+    -fx-effect: dropshadow( gaussian , rgba(55,0,0,0.5) , 0,0,0,1 );
+}
 
 #redRadio > .radio {
 	-fx-background-color: #DD0000;
@@ -99,6 +113,9 @@
 }
 #blueRadio > .radio {
 	-fx-background-color: #0000DD;
+}
+#yellowRadio > .radio {
+	-fx-background-color: #DDDD00;
 }
 
 
