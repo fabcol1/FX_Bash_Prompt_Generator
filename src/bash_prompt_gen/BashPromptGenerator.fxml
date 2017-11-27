@@ -126,26 +126,34 @@
                 <!--<ToggleButton selected="false" prefHeight="20.0" prefWidth="85.0" text="Hostname"/>-->                            
                 <!--<ToggleButton selected="false" prefHeight="20.0" prefWidth="85.0" text="Hostname"/>-->                            
                                
-                <HBox alignment="CENTER" prefHeight="244.0" prefWidth="300.0">
+                <HBox   alignment="TOP_CENTER"  prefHeight="244.0" prefWidth="500.0">
                     <children>
-                        <GridPane prefHeight="236.0" prefWidth="282.0"
-                                  gridLinesVisible="true" alignment="CENTER">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
-                                                   prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
-                                                   prefWidth="100.0" />
+                        <GridPane prefHeight="236.0" prefWidth="500.0"
+                                  gridLinesVisible="false"   alignment="TOP_CENTER" >
+                            <columnConstraints >
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints minHeight="20.0" prefHeight="20.0"
-                                                vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="10.0"
-                                                vgrow="SOMETIMES" />
+                                <RowConstraints  minHeight="55.0" prefHeight="10.0" maxHeight="55.0" vgrow="SOMETIMES" />
+                                <RowConstraints  minHeight="55.0" maxHeight="55.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                <RowConstraints  minHeight="55.0" maxHeight="55.0" prefHeight="10.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             
-                            <ToggleButton onAction="#handleHostShort" prefHeight="40.0" fx:id="hostnameShort" selected="false" text="%hostnameShort" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <ToggleButton onAction="#handleHostFull" prefHeight="40.0" fx:id="hostnameFull" selected="false" text="%hostnameFull" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                            <ToggleButton onAction="#handleUsername" prefHeight="35.0" fx:id="username" selected="false" text="%username" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <ToggleButton onAction="#handleHostShort" prefHeight="40.0" minWidth="90.0" maxWidth="90.0" fx:id="mycomputer" selected="false" text="%hostnameShort" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleUsername" prefHeight="40.0" minWidth="90.0" maxWidth="90.0" fx:id="mario" selected="false" text="%username" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleShellVersion" prefHeight="40.0" fx:id="ver4" selected="false" minWidth="90.0" maxWidth="90.0" text="%shellVers" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleTerminalVersion" prefHeight="40.0" fx:id="tty" selected="false" text="%tty" minWidth="90.0" maxWidth="90.0"  GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleDirectory" prefHeight="40.0" fx:id="home" selected="false" text="%directory" minWidth="90.0" maxWidth="90.0"  GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                            <ToggleButton onAction="#handleBasename" prefHeight="40.0" fx:id="baseName" selected="false" text="%basename" GridPane.columnIndex="0" minWidth="90.0" maxWidth="90.0"  GridPane.rowIndex="1"/>
+                            <ToggleButton onAction="#handleTimeShort" prefHeight="40.0" fx:id="time" selected="false" text="%timeShort" GridPane.columnIndex="1" minWidth="90.0" maxWidth="90.0"  GridPane.rowIndex="1"/>
+                            <ToggleButton onAction="#handleDate" prefHeight="40.0" fx:id="date" selected="false" text="%date" GridPane.columnIndex="2" GridPane.rowIndex="1" minWidth="90.0" maxWidth="90.0" />
+                            <ToggleButton onAction="#handleExit" prefHeight="40.0" fx:id="exit" selected="false" text="%exitStatus" GridPane.columnIndex="3" GridPane.rowIndex="1" minWidth="90.0" maxWidth="90.0" />
+                            <ToggleButton onAction="#handleGit" prefHeight="40.0" fx:id="git" selected="false" text="%gitStatus" GridPane.columnIndex="4" GridPane.rowIndex="1" minWidth="90.0" maxWidth="90.0" />
+                            <ToggleButton onAction="#handleRootStatus" prefHeight="40.0" fx:id="rootStat" selected="false" text="%rootStatus" GridPane.columnIndex="0" GridPane.rowIndex="2" minWidth="90.0" maxWidth="90.0" />
 
                             
                         </GridPane>

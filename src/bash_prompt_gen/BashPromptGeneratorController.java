@@ -51,13 +51,37 @@ public class BashPromptGeneratorController {
     @FXML protected void handleHostShort(ActionEvent event) {
         handleToggleButtons(event);
     }
-    @FXML protected void handleHostFull(ActionEvent event) {
-        handleToggleButtons(event);
-    }
     @FXML protected void handleUsername(ActionEvent event) {
         handleToggleButtons(event);
     }
-
+    @FXML protected void handleShellVersion(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleTerminalVersion(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleDirectory(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleBasename(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleTimeShort(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleDate(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleExit(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleGit(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    @FXML protected void handleRootStatus(ActionEvent event) {
+        handleToggleButtons(event);
+    }
+    
     private void handleToggleButtons(ActionEvent event) {
         if (manager == null) {
             return;
