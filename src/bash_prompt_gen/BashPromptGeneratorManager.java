@@ -9,9 +9,11 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -22,13 +24,10 @@ public class BashPromptGeneratorManager {
 	 * A Map for keep all the styles, avoiding css errors.
 	 */
 	private static final Map<String,String> stylesMap = new HashMap<>();
-	private static final Map<String,Text> textMap = new LinkedHashMap<>();
+	private static final Map<String,Label> textMap = new LinkedHashMap<>();
         
         private TextFlow area;
-        
-        private static Color foregroundColor = Color.BLACK;
-        private static Color backgroundColor = Color.WHITE;
-        
+                
         private RadioButton fontColorRadioButton;        
         private RadioButton backColorRadioButton;
     
@@ -136,8 +135,15 @@ public class BashPromptGeneratorManager {
                 textMap.remove(id);
             }
         } else {
-            Text t = new Text(id);
-            textMap.put(id, t);
+            final Label lab = new Label(id);
+            final StringBuilder sb = new StringBuilder();
+            sb.append("-fx-opacity: 1.0; ");
+            sb.append("-fx-text-fill:"+fontColorRadioButton.getId()+"; ");
+            sb.append("-fx-background-color:"+backColorRadioButton.getId()+"; ");
+            sb.append("-fx-font-weight: bold; ");
+            lab.setStyle(sb.toString());
+//            Text t = new Text(id);
+            textMap.put(id, lab);
         }
         refreshTextFlowArea();
     }

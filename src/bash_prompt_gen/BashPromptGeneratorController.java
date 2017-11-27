@@ -7,6 +7,8 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.TextFlow;
 
 public class BashPromptGeneratorController {
@@ -101,7 +103,7 @@ public class BashPromptGeneratorController {
         initToggleGroupColor();
 //		
 //                Text t = new Text("provaprovaprova");
-//                previewTextFlow.getChildren().add(t);	
+
     }
 
     private void initSpinnerListener() {
